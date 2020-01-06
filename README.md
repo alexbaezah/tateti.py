@@ -1,2 +1,2 @@
 # tateti.py
-Ta te ti en python
+Ta te ti en python 3
