@@ -1,5 +1,6 @@
 Dar Run
 elegir la letra jugador, X u O
+elegirá al azar quién juega primero
 elegir la jugada contando los casilleros desde abajo a la derecha:
 _   _  _
 9 | 8 | 7
