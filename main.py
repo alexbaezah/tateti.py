@@ -30,8 +30,8 @@ def ingresaLetraJugador():
     else:
         return ['O', 'X']
 
-def comienzaJuego():
-       if (0, 1) == 0:
+def quienComienza():
+       if random.randint(0, 1) == 0:
            return 'La computadora'
        else:
            return 'El jugador'
@@ -155,8 +155,8 @@ while True:
     # Resetea el tablero
     elTablero = [' '] * 10
     letraJugador, letraComputadora = ingresaLetraJugador()
-    turno = comienzaJuego()
-    print('jugador irá primero.')
+    turno = quienComienza()
+    print(turno + ' irá primero.')
     juegoEnCurso = True
 
     while juegoEnCurso:
