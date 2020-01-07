@@ -1,9 +1,6 @@
 import random
 
 def dibujarTablero(tablero):
-    # Esta función dibuja el tablero recibido como argumento.
-
-    # "tablero" es una lista de 10 cadenas representando la pizarra
     print('   |   |')
     print(' ' + tablero[7] + ' | ' + tablero[8] + ' | ' + tablero[9])
     print('   |   |')
@@ -17,15 +14,14 @@ def dibujarTablero(tablero):
     print('   |   |')
 
 def ingresaLetraJugador():
-    # Permite al jugador typear que letra desea ser.
-    # Devuelve una lista con las letras de los jugadores como primer item, y la de la computadora como segundo.
+    # Permite al jugador tipear que letra desea ser.
     letra = ''
     while not (letra == 'X' or letra == 'O'):
         print('¿Deseas ser X o O?')
         letra = input().upper()
 
        # el primer elemento de la lista es la letra del jugador, el segundo es la letra de la computadora.
-    if letra == 'X':
+    if letra == ' ':
         return ['X', 'O']
     else:
         return ['O', 'X']
