@@ -1,6 +1,6 @@
 import random
 
-def dibujarTablero(tablero):
+def dibujar_tablero(tablero):
     print('   |   |')
     print(' ' + tablero[7] + ' | ' + tablero[8] + ' | ' + tablero[9])
     print('   |   |')
@@ -13,7 +13,7 @@ def dibujarTablero(tablero):
     print(' ' + tablero[1] + ' | ' + tablero[2] + ' | ' + tablero[3])
     print('   |   |')
 
-def ingresaLetraJugador():
+def ingresa_letra_jugador():
     # Permite al jugador tipear que letra desea ser.
     letra = ''
     while not (letra == 'X' or letra == 'O'):
@@ -26,21 +26,21 @@ def ingresaLetraJugador():
     else:
         return ['O', 'X']
 
-def quienComienza():
+def quien_comienza():
        if random.randint(0, 1) == 0:
            return 'La computadora'
        else:
            return 'El jugador'
 
-def jugarDeNuevo():
+def jugar_de_nuevo():
     # Esta funcion devuelve True (Verdadero) si el jugador desea volver a jugar, de lo contrario devuelve False (Falso).
     print('¿Deseas volver a jugar? (sí/no)?')
     return input().lower().startswith('s')
 
-def hacerJugada(tablero, letra, jugada):
+def hacer_jugada(tablero, letra, jugada):
     tablero[jugada] = letra
 
-def esGanador(t, l):
+def es_ganador(t, l):
     #Dado un tablero y la letra de un jugador, devuelve True (verdadero) si el mismo ha ganado.
     #t = tablero y l = letra.
     return ((t[7] == l and t[8] == l and t[9] == l) or  #horizontal superior
@@ -53,7 +53,7 @@ def esGanador(t, l):
             (t[9] == l and t[5] == l and t[1] == l))  # diagonal
 
 
-def obtenerDuplicadoTablero(tablero):
+def obtener_duplicado_tablero(tablero):
      #Construye una copia del tablero original y devuelve una referencia al nuevo tablero.
      #La lista dupTablero está vacía, el bucle for recorre tablero agregando una copia de los valores del original al duplicado, luego devuelve dupTablero
      dupTablero = []
@@ -63,12 +63,12 @@ def obtenerDuplicadoTablero(tablero):
 
      return dupTablero
 
-def hayEspacioLibre(tablero, jugada):
+def hay_espacio_libre(tablero, jugada):
     # Devuelte true si hay espacio para la jugada en el tablero.
     # Si el elemento en el índice no es un espacio simple, está ocupado y no es una jugada válida
     return tablero[jugada] == ' '
 
-def obtenerJugadaJugador(tablero):
+def obtener_jugada_jugador(tablero):
     # Permite al jugador escribir el número del espacio.
     jugada = ' '
     while jugada not in ['1', '2', '3', '4', '5', '6', '7', '8', '9'] or not hayEspacioLibre(tablero, int(jugada)):
